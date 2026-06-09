@@ -1,6 +1,15 @@
 # Classificação de Imagens de Desastres usando Redes Neurais Convolucionais Profundas
 
-## Visão Geral
+## Integrantes: 
+Fernanda Kaory Saito - 551104
+João Pedro Borsato da Cruz - 550294
+Maria Fernanda Vieira de Camargo - 97956
+Pedro Lucas de Andrades Nunes - 550366
+Vinicius Almeida Bernardino de Souza - 97888
+
+---
+
+# Visão Geral
 
 Este projeto investiga o uso de Redes Neurais Convolucionais Profundas, também conhecidas como CNNs, para a classificação automática de imagens relacionadas a desastres. O objetivo é treinar e avaliar diferentes arquiteturas modernas de classificação de imagens e comparar seus desempenhos em um dataset composto por imagens de desastres.
 
