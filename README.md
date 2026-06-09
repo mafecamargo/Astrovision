@@ -1,4 +1,4 @@
-# Classificação de Imagens de Desastres usando Redes Neurais Convolucionais Profundas
+# Classificação de Imagens de Desastres usando Redes Neurais Convolucionais
 
 ## Integrantes: 
 - Fernanda Kaory Saito - RM551104
