@@ -143,8 +143,10 @@ Essas métricas permitem avaliar não apenas a taxa geral de acertos do modelo, 
 ---
 # Pré requisitos para fazer o treinamento dos modelos:
 
-Entrar no link: https://fiapcom-my.sharepoint.com/:f:/g/personal/rm97956_fiap_com_br/IgAUzPAnCv2xSaLtsWg52Sd-AcJ9WomXpsnglrqVktGauCs?e=dfUjcv 
-
+Entrar no link: 
+```` link 
+https://fiapcom-my.sharepoint.com/:f:/g/personal/rm97956_fiap_com_br/IgAUzPAnCv2xSaLtsWg52Sd-AcJ9WomXpsnglrqVktGauCs?e=dfUjcv 
+````
 
 Neste link há as pastas checkpoint e data. Para executar o treinamento de forma correta é necessário baixar os arquivos e adicioná-los em suas respectivas pastas.
 
@@ -247,4 +249,4 @@ Possíveis melhorias e extensões para este projeto incluem:
 - Simonyan, K., & Zisserman, A. (2015). *Very Deep Convolutional Networks for Large-Scale Image Recognition*.
 - He, K., Zhang, X., Ren, S., & Sun, J. (2016). *Deep Residual Learning for Image Recognition*.
 - Documentação do PyTorch: https://pytorch.org
-````
+
