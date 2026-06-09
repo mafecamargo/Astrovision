@@ -1,11 +1,11 @@
 # Classificação de Imagens de Desastres usando Redes Neurais Convolucionais Profundas
 
 ## Integrantes: 
-Fernanda Kaory Saito - 551104
-João Pedro Borsato da Cruz - 550294
-Maria Fernanda Vieira de Camargo - 97956
-Pedro Lucas de Andrades Nunes - 550366
-Vinicius Almeida Bernardino de Souza - 97888
+- Fernanda Kaory Saito - RM551104
+- João Pedro Borsato da Cruz - RM550294
+- Maria Fernanda Vieira de Camargo - RM97956
+- Pedro Lucas de Andrades Nunes - RM550366
+- Vinicius Almeida Bernardino de Souza - RM97888
 
 ---
 
