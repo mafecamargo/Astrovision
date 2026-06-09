@@ -1,42 +1,43 @@
-# Disaster Image Classification using Deep Convolutional Neural Networks
+# Classificação de Imagens de Desastres usando Redes Neurais Convolucionais Profundas
 
-## Overview
+## Visão Geral
 
-https://fiapcom-my.sharepoint.com/:f:/g/personal/rm97956_fiap_com_br/IgAUzPAnCv2xSaLtsWg52Sd-AcJ9WomXpsnglrqVktGauCs?e=dfUjcv 
 
-This project investigates the use of Deep Convolutional Neural Networks (CNNs) for automatic disaster image classification. The objective is to train and evaluate multiple state-of-the-art image classification architectures and compare their performance on a disaster-related image dataset.
+Este projeto investiga o uso de Redes Neurais Convolucionais Profundas, também conhecidas como CNNs, para a classificação automática de imagens relacionadas a desastres. O objetivo é treinar e avaliar diferentes arquiteturas modernas de classificação de imagens e comparar seus desempenhos em um dataset composto por imagens de desastres.
 
-The project follows a complete machine learning workflow:
+O projeto segue um fluxo completo de aprendizado de máquina:
 
-1. Dataset preparation and preprocessing
-2. Model training using transfer learning
-3. Validation and testing
-4. Quantitative model comparison
-5. Interactive deployment using Streamlit
+1. Preparação e pré-processamento do dataset
+2. Treinamento dos modelos utilizando transfer learning
+3. Validação e teste dos modelos
+4. Comparação quantitativa dos resultados
+5. Implantação interativa utilizando Streamlit
 
-The final system allows users to upload an image and obtain a disaster category prediction together with confidence scores.
+O sistema final permite que o usuário faça o upload de uma imagem e receba como resultado a categoria de desastre prevista pelo modelo, juntamente com a pontuação de confiança da classificação.
 
-# Motivation
+---
 
-Natural disasters such as floods, earthquakes, wildfires, and landslides can cause significant damage to infrastructure, ecosystems, and human populations.
+# Motivação
 
-During emergency response operations, large quantities of images are collected from:
+Desastres naturais, como enchentes, terremotos, incêndios florestais e deslizamentos de terra, podem causar grandes danos à infraestrutura, aos ecossistemas e às populações humanas.
 
-- Social media
-- Surveillance cameras
+Durante operações de resposta a emergências, grandes quantidades de imagens são coletadas a partir de diferentes fontes, como:
+
+- Redes sociais
+- Câmeras de vigilância
 - Drones
-- Satellites
-- Mobile devices
+- Satélites
+- Dispositivos móveis
 
-Manual inspection of these images is time-consuming and difficult to scale. Automatic image classification systems can support emergency management teams by rapidly categorizing incoming visual information and identifying affected regions.
+A análise manual dessas imagens é demorada e difícil de escalar. Sistemas automáticos de classificação de imagens podem auxiliar equipes de gerenciamento de emergências ao categorizar rapidamente informações visuais recebidas e identificar regiões afetadas.
 
-This project explores whether modern CNN architectures can effectively distinguish between different disaster categories using transfer learning.
+Este projeto explora se arquiteturas modernas de CNN conseguem distinguir de forma eficiente diferentes categorias de desastres utilizando transfer learning.
 
 ---
 
 # Dataset
 
-The dataset consists of images grouped into disaster-related categories.
+O dataset é composto por imagens agrupadas em categorias relacionadas a desastres.
 
 ```text
 data/
@@ -60,169 +61,190 @@ data/
 └── Water_Disaster
 ```
 
-The current implementation considers the first-level folders as classes:
+A implementação atual considera as pastas de primeiro nível como classes:
 
-| Class ID | Class Name             |
-| -------- | ---------------------- |
-| 0        | Damaged_Infrastructure |
-| 1        | Fire_Disaster          |
-| 2        | Land_Disaster          |
-| 3        | Non_Damage             |
-| 4        | Water_Disaster         |
+| ID da Classe | Nome da Classe          |
+| ------------ | ----------------------- |
+| 0            | Damaged_Infrastructure  |
+| 1            | Fire_Disaster           |
+| 2            | Land_Disaster           |
+| 3            | Non_Damage              |
+| 4            | Water_Disaster          |
 
-Thus, the task is a 5-class image classification problem.
+Dessa forma, o problema tratado neste projeto é uma tarefa de classificação de imagens com 5 classes.
 
 ---
 
-# Model Architectures
+# Arquiteturas dos Modelos
 
-Two CNN architectures are evaluated.
+Duas arquiteturas de Redes Neurais Convolucionais foram avaliadas neste projeto.
 
 ## 1. VGG16
 
-VGG16 is a deep convolutional neural network introduced by the Visual Geometry Group (VGG) at the University of Oxford.
+A VGG16 é uma rede neural convolucional profunda introduzida pelo Visual Geometry Group, da Universidade de Oxford.
 
-Characteristics:
+Características:
 
-- 16 learnable layers
-- Sequential architecture
-- Uses small 3×3 convolution kernels
-- Approximately 138 million parameters
+- 16 camadas treináveis
+- Arquitetura sequencial
+- Utiliza pequenos filtros convolucionais de tamanho 3×3
+- Possui aproximadamente 138 milhões de parâmetros
 
-Advantages:
+Vantagens:
 
-- Simple architecture
-- Strong baseline model
-- Easy to understand
+- Arquitetura simples
+- Bom modelo de referência
+- Fácil de entender e interpretar
 
-Limitations:
+Limitações:
 
-- Large memory footprint
-- Slower training and inference
-- Higher risk of overfitting
+- Alto consumo de memória
+- Treinamento e inferência mais lentos
+- Maior risco de overfitting
 
 ---
 
 ## 2. ResNet50
 
-ResNet50 was introduced by Microsoft Research and introduced the concept of residual learning.
+A ResNet50 foi introduzida pela Microsoft Research e apresentou o conceito de aprendizado residual.
 
-Characteristics:
+Características:
 
-- 50 layers
-- Residual (skip) connections
-- Approximately 25 million parameters
+- 50 camadas
+- Conexões residuais, também chamadas de skip connections
+- Possui aproximadamente 25 milhões de parâmetros
 
-Advantages:
+Vantagens:
 
-- Deeper network
-- Better gradient propagation
-- Faster convergence
-- Generally better accuracy
+- Rede mais profunda
+- Melhor propagação do gradiente
+- Convergência mais rápida durante o treinamento
+- Geralmente apresenta melhor acurácia
 
-Limitations:
+Limitações:
 
-- More complex architecture
-- Less interpretable than VGG
-
-# Evaluation Metrics
-
-Models are compared using accuracy, precision, recall, F1 Score and a Confusion Matrix.
+- Arquitetura mais complexa
+- Menos interpretável quando comparada à VGG16
 
 ---
 
-# Training a Model
+# Métricas de Avaliação
 
-Example using ResNet50:
+Os modelos são comparados utilizando as seguintes métricas:
+
+- Acurácia
+- Precisão
+- Recall
+- F1-score
+- Matriz de Confusão
+
+Essas métricas permitem avaliar não apenas a taxa geral de acertos do modelo, mas também seu desempenho em cada classe individualmente.
+
+---
+# Pré requisitos para fazer o treinamento dos modelos:
+
+Entrar no link: https://fiapcom-my.sharepoint.com/:f:/g/personal/rm97956_fiap_com_br/IgAUzPAnCv2xSaLtsWg52Sd-AcJ9WomXpsnglrqVktGauCs?e=dfUjcv 
+
+
+Neste link há as pastas checkpoint e data. Para executar o treinamento de forma correta é necessário baixar os arquivos e adicioná-los em suas respectivas pastas.
+
+
+Além disso, é necessário verificar em requirements.txt se as bibliotecas necessárias estão nas versões corretas/ atualizadas.
+
+---
+# Treinamento de um Modelo
+
+Exemplo de treinamento utilizando a ResNet50:
 
 ```bash
 python train.py
 ```
 
-Inside `train.py`:
+Dentro do arquivo `train.py`, o modelo é definido por meio da variável:
 
 ```python
 MODEL_NAME = "resnet50"
 ```
 
-For VGG16:
+Para utilizar a VGG16, basta alterar o valor da variável para:
 
 ```python
 MODEL_NAME = "vgg16"
 ```
 
-The best model checkpoint will be saved automatically.
+O melhor checkpoint do modelo será salvo automaticamente durante o treinamento.
 
 ---
 
-# Streamlit Application
+# Aplicação com Streamlit
 
-The project includes an interactive deployment interface.
+O projeto inclui uma interface interativa de implantação utilizando Streamlit.
 
-Launch:
+Para iniciar a aplicação, execute:
 
 ```bash
 streamlit run app.py
 ```
 
-The web application allows users to:
+A aplicação web permite que o usuário:
 
-1. Upload an image
-2. Run inference using the trained model
-3. View predicted class
-4. View confidence score
-5. Visualize class probabilities
+1. Faça o upload de uma imagem
+2. Execute a inferência utilizando o modelo treinado
+3. Visualize a classe prevista
+4. Visualize a pontuação de confiança
+5. Observe as probabilidades atribuídas a cada classe
 
 ---
 
-# Expected Workflow
+# Fluxo Esperado de Execução
 
-Train ResNet50:
+Treinar o modelo ResNet50:
 
 ```bash
 python train.py
 ```
 
-Launch application:
+Iniciar a aplicação:
 
 ```bash
 streamlit run app.py
 ```
 
-Upload an image:
+Fazer o upload de uma imagem, por exemplo:
 
 ```text
 flood_scene.jpg
 ```
 
-Example output:
+Exemplo de saída esperada:
 
 ```text
-Predicted Class: Water_Disaster
+Classe Prevista: Water_Disaster
 
-Confidence: 94.7%
+Confiança: 94.7%
 ```
 
 ---
 
-# Future Improvements
+# Melhorias Futuras
 
-Potential extensions include:
+Possíveis melhorias e extensões para este projeto incluem:
 
-- EfficientNet
-- DenseNet
-- Vision Transformers (ViT)
-- Hyperparameter optimization
-- K-fold cross-validation
-- Explainability methods (Grad-CAM)
-- Multi-label disaster classification
-- Deployment using Docker
-- REST API integration
+- Uso da arquitetura EfficientNet
+- Uso da arquitetura DenseNet
+- Uso de Vision Transformers, também conhecidos como ViT
+- Otimização de hiperparâmetros
+- Validação cruzada com K-fold
+- Métodos de explicabilidade, como Grad-CAM
+- Classificação multi-label de desastres
+- Implantação utilizando Docker
+- Integração com uma API REST
 
 ---
 
-# References
+# Referências
 
-- Simonyan, K., & Zisserman, A. (2015). Very Deep Convolutional Networks for Large-Scale Image Recognition.
-- He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition.
-- PyTorch Documentation: https://pytorch.org
+- Simonyan, K., & Zisserman, A. (2015). *Very Deep Convolutional Networks for Large-Scale Image Recognition*.
+- He, K., Zhang, X., Ren, S., & Sun, J. (2016). *Deep Residual Learning for Image Recognition*.
+- Documentação do PyTorch: https://pytorch.org
+````
