@@ -117,9 +117,6 @@ Limitações:
 
 A ResNet50 foi introduzida pela Microsoft Research e apresentou o conceito de aprendizado residual.
 
-Diagrama da arquitetura do modelo VGG16: 
-![ResNet50 Model Architecture](https://github.com/Sudhandar/ResNet-50-model/raw/master/output/model.png)
-
 Características:
 
 - 50 camadas
