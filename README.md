@@ -16,7 +16,7 @@ Este projeto investiga o uso de Redes Neurais Convolucionais Profundas, também 
 O projeto segue um fluxo completo de aprendizado de máquina:
 
 1. Preparação e pré-processamento do dataset
-2. Treinamento dos modelos utilizando transfer learning
+2. Treinamento dos modelos from scratch
 3. Validação e teste dos modelos
 4. Comparação quantitativa dos resultados
 5. Implantação interativa utilizando Streamlit
