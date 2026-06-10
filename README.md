@@ -168,8 +168,32 @@ https://fiapcom-my.sharepoint.com/:f:/g/personal/rm97956_fiap_com_br/IgAUzPAnCv2
 
 Neste link há as pastas checkpoint e data. Para executar o treinamento de forma correta é necessário baixar os arquivos e adicioná-los em suas respectivas pastas.
 
+Verifique em 'requirements.txt' se as bibliotecas necessárias estão baixadas e atualizadas.
 
-Além disso, é necessário verificar em requirements.txt se as bibliotecas necessárias estão nas versões corretas/ atualizadas.
+## Principais instalações necessárias:
+ 
+### venv
+Para instalar:
+````python
+python3 -m venv venv
+````
+
+Para ativar:
+````python
+. venv/Scripts/activate 
+````
+### Torch, torchvision e grad-cam
+Instalação: 
+````python
+python -m pip install torch torchvision grad-cam
+````
+
+### Streamlit
+Instalação:
+````python
+pip install streamlit
+````
+O seu uso será visto adiante.
 
 ---
 # Treinamento de um Modelo
@@ -267,4 +291,25 @@ Possíveis melhorias e extensões para este projeto incluem:
 - Simonyan, K., & Zisserman, A. (2015). *Very Deep Convolutional Networks for Large-Scale Image Recognition*.
 - He, K., Zhang, X., Ren, S., & Sun, J. (2016). *Deep Residual Learning for Image Recognition*.
 - Documentação do PyTorch: https://pytorch.org
+
+---
+### Bônus:
+Os modelos treinados conseguiram classificar alguns Pokémons, mas com menos acurária do que classificaram as imagens de desastres naturais:
+- Charizard:
+  
+VGG16
+![VGG16 Charizard](https://drive.google.com/uc?export=view&id=1nGxfzK8k3e6HgHDiH7pkkNa_GW0fU6Ni)
+
+ResNet50
+![CharizardResnet](https://drive.google.com/uc?export=view&id=1WQlOvABBjbgXyzUeyJeVq9iNWMPwK4Xa)
+- Golem
+  
+VGG16
+![VGG16 Golem](https://drive.google.com/uc?export=view&id=1jOu-tUyLB_akViJ5_OvC3lUx8xljUjaE) 
+
+ResNet50
+![ResNet Golem](https://drive.google.com/uc?export=view&id=1hEG0QohWtmeEM4NZTwhwU7feWmAaDwAW) 
+
+
+
 
